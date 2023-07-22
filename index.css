@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@font-face {
+  font-family: "logo";
+  src: url(/font/static/Tektur_SemiCondensed-Regular.ttf);
+}
+@font-face {
+  font-family: "space";
+  src: url(/font/Quicksand-Light.ttf);
+}
+@font-face {
+  font-family: "space-bold";
+  src: url(/font/Quicksand-Bold.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  cursor: url(/cursor/cursor1.png), auto;
+  font-family: "Montserrat", sans-serif;
+}
+
+header {
+  width: 100%;
+  height: 4.5em;
+  background-color: rgb(26, 26, 26);
+  top: 0;
+  left: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: 2em;
+  padding-block: 0.75em;
+}
+
+nav .logo {
+  color: white;
+  font-family: "logo";
+  font-size: 2em;
+  letter-spacing: 5px;
+}
+
+ul li {
+  cursor: pointer;
+  margin-inline: 2em;
+  padding: 0.5em 1em;
+}
+
+nav .more {
+  color: white;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 20em;
+  display: flex;
+  justify-content: center;
+}
+
+nav .more > ul {
+  -webkit-text-decoration: nore;
+          text-decoration: nore;
+  list-style: none;
+  font-size: 0.75em;
+  display: flex;
+  flex-direction: row;
+}
+
+.contactButton {
+  background-color: transparent;
+  padding: 0.75em 0.5em;
+  border: none;
+  transition: all 0.5s ease-in;
+}
+.contactButton p {
+  color: #ffffff;
+  padding: 0.2em 0.5em;
+  cursor: pointer;
+  letter-spacing: 2px;
+  font-family: "space";
+  font-size: 1.1em;
+}
+
+.contactButton:hover {
+  background-image: linear-gradient(80deg, #241937, #653155, #a84e61);
+}
+
+ul li:hover {
+  color: black;
+  background-color: white;
+  width: 100%;
+  text-align: center;
+  height: -moz-fit-content;
+  height: fit-content;
+  border: none;
+  border-radius: 1em;
+}
+
+.coloredBorder {
+  border-width: 1px;
+  border-style: solid;
+  -o-border-image: linear-gradient(80deg, #291846, #692956, #ac4057) 1;
+     border-image: linear-gradient(80deg, #291846, #692956, #ac4057) 1;
+}
+
+.container {
+  height: 100%;
+  width: calc(100% - 4em);
+  padding-inline: 2em;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.wrapper {
+  width: 600px;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding-inline: 2em;
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+  text-align: start;
+}
+.line p {
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: rgb(240, 229, 209);
+  font-size: 3.75em;
+  font-family: "logo";
+  font-weight: 700;
+  letter-spacing: 5px;
+  line-height: 1em;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+}
+.main section:nth-child(1) {
+  height: calc(100vh - 70.84px);
+  background-color: #131313;
+  background-image: url(/img/bg-space.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: multiply;
+  background-color: rgb(24, 24, 24);
+}
+.main section:nth-child(2) {
+  height: 100vh;
+}/*# sourceMappingURL=index.css.map */
