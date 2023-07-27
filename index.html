@@ -4,55 +4,124 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
     <title>Document</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <div class="logo">Space</div>
-        <div class="more">
-          <ul>
-            <li>About</li>
-            <li>Explore</li>
-            <li>History</li>
-          </ul>
-        </div>
-        <div>
-          <button class="contactButton coloredBorder">
-            <p>Contact Me</p>
-          </button>
-        </div>
-      </nav>
-    </header>
+    <script src="/node_modules/gsap/all.js"></script>
     <div class="main">
       <section>
-        <div class="container">
-          <div class="wrapper">
-            <div class="line">
-              <p>JIRAER</p>
-              <p>ACHKARIAN</p>
+        <header>
+          <nav>
+            <div class="logo">Space</div>
+            <div class="more">
+              <ul>
+                <li>About</li>
+                <li>Explore</li>
+                <li>History</li>
+              </ul>
             </div>
-            <div class="line">
-              <p>WEBSITE</p>
-              <p>DESIGNER</p>
+            <div>
+              <button class="contactButton coloredBorder">
+                <p>Contact Me</p>
+              </button>
             </div>
-            <div class="line">
-              <p>A</p>
+          </nav>
+        </header>
 
-              <p>FRONTEND</p>
-              <p>WEBDEV</p>
-            </div>
-            <div class="line">
-              <p>@INTEGENAL_SEMATIC</p>
+        <div class="grid">
+          <div class="container">
+            <div class="wrapper">
+              <div class="line">
+                <p class="text">JIRAER</p>
+                <p class="text">ACHKARIAN</p>
+              </div>
+              <div class="line">
+                <p class="text">WEBSITE</p>
+                <p class="text">DESIGNER</p>
+              </div>
+              <div class="line">
+                <p class="text">A</p>
+                <p class="text">FRONTEND</p>
+                <p class="text">WEBDEV</p>
+              </div>
+              <div class="line">
+                <p class="text">@INTEGENAL_SEMATIC</p>
+              </div>
+              <div class="text-box">
+                <h1 style="color: white">I am a <span>WebDev.</span></h1>
+              </div>
             </div>
           </div>
         </div>
       </section>
+
       <section></section>
     </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CSSRulePlugin.min.js"
+      integrity="sha512-+35N1KBHwTDnFOBSqO2nm/qsf5okaS74sUZu/rT/wlvuAfJ1hrAoGlWZip2l1LHB1q2i8B2k84Pb/NrC38bv8Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script>
+      let tl = gsap.timeline({
+        defaults: { ease: "power2.inOut", duration: 1 },
+      });
+      let flagPoles = CSSRulePlugin.getRule(".container");
+
+      tl.from(".project", {
+        opacity: 0,
+        delay: 0.5,
+        x: -100,
+        ease: "power2.inOut",
+        duration: 0.5,
+      }).to(".project", {
+        opacity: 0,
+        x: 0,
+      });
+      tl.from(".line", {
+        opacity: 0,
+        xPercent: 100,
+        ease: "power2.inOut",
+        autoAlpha: 1,
+        stagger: 0.2,
+        overwrite: "auto",
+        duration: 0.5,
+      });
+      tl.to(".line", {
+        opacity: 1,
+        xPercent: 0,
+      });
+      tl.from(
+        ".text-box",
+        {
+          opacity: 0,
+          scale: 0.7,
+        },
+        "+=0"
+      ).to(
+        ".text-box",
+        {
+          scale: 1,
+          xPercent: 0,
+          ease: "power2.inOut",
+          autoAlpha: 1,
+          overwrite: "auto",
+          duration: 0.5,
+          opacity: 1,
+        },
+        "<"
+      );
+    </script>
+
+    <script></script>
   </body>
 </html>
