@@ -4,16 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="index.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=tanker@400&display=swap"
+      rel="stylesheet" />
     <title>Document</title>
   </head>
   <body>
-    <script src="/node_modules/gsap/all.js"></script>
     <div class="main">
       <section>
         <header>
           <nav>
-            <div class="logo">Space</div>
             <div class="more">
               <ul>
                 <li>About</li>
@@ -22,9 +23,11 @@
               </ul>
             </div>
             <div>
-              <button class="contactButton coloredBorder">
-                <p>Contact Me</p>
-              </button>
+              <a href="contact.html">
+                <button class="contactButton coloredBorder">
+                  <p>Contact Me</p>
+                </button>
+              </a>
             </div>
           </nav>
         </header>
@@ -32,31 +35,62 @@
         <div class="grid">
           <div class="container">
             <div class="wrapper">
-              <div class="line">
+              <div class="line" id="line1">
                 <p class="text">JIRAER</p>
                 <p class="text">ACHKARIAN</p>
               </div>
-              <div class="line">
+              <div class="line" id="line2">
                 <p class="text">WEBSITE</p>
                 <p class="text">DESIGNER</p>
               </div>
-              <div class="line">
+              <div class="line" id="line3">
                 <p class="text">A</p>
                 <p class="text">FRONTEND</p>
                 <p class="text">WEBDEV</p>
               </div>
-              <div class="line">
+              <div class="line" id="line4">
                 <p class="text">@INTEGENAL_SEMATIC</p>
               </div>
               <div class="text-box">
                 <h1 style="color: white">I am a <span>WebDev.</span></h1>
               </div>
             </div>
+            <div class="link-svg">
+              <div class="svg"></div>
+              <p data-scroll-speed="3">scroll down</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section></section>
+      <section>
+        <div class="grid1">
+          <div class="object big-text">
+            <h1>images</h1>
+            <p>
+              Lorem ipsum dolor sit amet, an affert consequuntur eos, etiam
+              fabellas ad duo. Est eu dictas fabellas referrentur.
+            </p>
+          </div>
+
+          <div class="object image">
+            <img src="" alt="" />
+          </div>
+          <div class="object image">
+            <img src="" alt="" />
+          </div>
+          <div class="paragraph">
+            <p>
+              Lorem ipsum dolor sit amet, an affert consequuntur eos, etiam
+              fabellas ad duo. Est eu dictas fabellas referrentur.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, an affert consequuntur eos, etiam
+              fabellas ad duo. Est eu dictas fabellas referrentur.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
 
     <script
@@ -70,58 +104,17 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+      integrity="sha512-Ic9xkERjyZ1xgJ5svx3y0u3xrvfT/uPkV99LBwe68xjy/mGtO+4eURHZBW2xW4SZbFrF1Tf090XqB+EVgXnVjw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
 
-    <script>
-      let tl = gsap.timeline({
-        defaults: { ease: "power2.inOut", duration: 1 },
-      });
-      let flagPoles = CSSRulePlugin.getRule(".container");
-
-      tl.from(".project", {
-        opacity: 0,
-        delay: 0.5,
-        x: -100,
-        ease: "power2.inOut",
-        duration: 0.5,
-      }).to(".project", {
-        opacity: 0,
-        x: 0,
-      });
-      tl.from(".line", {
-        opacity: 0,
-        xPercent: 100,
-        ease: "power2.inOut",
-        autoAlpha: 1,
-        stagger: 0.2,
-        overwrite: "auto",
-        duration: 0.5,
-      });
-      tl.to(".line", {
-        opacity: 1,
-        xPercent: 0,
-      });
-      tl.from(
-        ".text-box",
-        {
-          opacity: 0,
-          scale: 0.7,
-        },
-        "+=0"
-      ).to(
-        ".text-box",
-        {
-          scale: 1,
-          xPercent: 0,
-          ease: "power2.inOut",
-          autoAlpha: 1,
-          overwrite: "auto",
-          duration: 0.5,
-          opacity: 1,
-        },
-        "<"
-      );
-    </script>
-
+    <script src="app.js"></script>
     <script></script>
   </body>
 </html>

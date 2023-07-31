@@ -13,6 +13,14 @@
   src: url(/font/static/Tektur_SemiCondensed-Regular.ttf);
 }
 @font-face {
+  font-family: "cave";
+  src: url(/font/caves.otf);
+}
+@font-face {
+  font-family: "high";
+  src: url(/font/highstar.otf);
+}
+@font-face {
   font-family: "space";
   src: url(/font/Quicksand-Light.ttf);
 }
@@ -28,21 +36,18 @@
 html,
 body {
   font-family: "Montserrat", sans-serif;
-  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 header {
-  position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
   width: 100%;
   height: 4.5em;
-  background-color: rgba(131, 131, 131, 0.096);
+  background-color: rgba(3, 3, 3, 0.507);
   top: 0;
   left: 0;
   animation: navA 3s ease-in-out;
-  box-shadow: 0 2px 4px -2px rgba(255, 255, 255, 0.418);
 }
 header nav {
   display: flex;
@@ -54,11 +59,12 @@ header nav {
 }
 header nav .logo {
   color: white;
-  font-family: "logo";
-  font-size: 2em;
+  font-family: "telma";
+  font-size: 1.5em;
   letter-spacing: 5px;
 }
 header nav .more {
+  margin-right: 3em;
   color: white;
   width: -moz-fit-content;
   width: fit-content;
@@ -72,7 +78,7 @@ header nav .more ul {
   -webkit-text-decoration: nore;
           text-decoration: nore;
   list-style: none;
-  font-size: 0.75em;
+  font-size: 0.8em;
   display: flex;
   flex-direction: row;
 }
@@ -80,6 +86,8 @@ header nav .more ul li {
   cursor: pointer;
   margin-inline: 2em;
   padding: 0.5em 1em;
+  transition: all 0.2s ease-in-out;
+  border-radius: 1em;
 }
 header nav .more ul li:hover {
   color: black;
@@ -92,27 +100,37 @@ header nav .more ul li:hover {
   border-radius: 1em;
 }
 header nav .contactButton {
+  left: 0;
+  right: 100;
   background-color: transparent;
   padding: 0.75em 0.5em;
   border: none;
-  transition: all 0.5s ease-in;
+  transition: all 0.2s ease-in-out;
 }
 header nav .contactButton p {
   color: #ffffff;
   padding: 0.2em 0.5em;
   cursor: pointer;
   letter-spacing: 2px;
-  font-family: "space";
-  font-size: 1.1em;
+  font-family: "space-bold";
+  font-size: 1.25em;
 }
+header nav .coloredBorder:hover,
 header nav .contactButton:hover {
-  background-image: linear-gradient(80deg, #1c0642, #790857, #be455f);
+  background-color: white;
+  -o-border-image: none;
+     border-image: none;
+  border-color: black;
+}
+header nav .coloredBorder:hover p,
+header nav .contactButton:hover p {
+  color: black;
 }
 header nav .coloredBorder {
+  border-radius: 0.25em;
   border-width: 1px;
   border-style: solid;
-  -o-border-image: linear-gradient(80deg, #291846, #692956, #ac4057) 1;
-     border-image: linear-gradient(80deg, #291846, #692956, #ac4057) 1;
+  border-color: white;
 }
 
 @media (min-width: 450px) {
@@ -139,6 +157,7 @@ header nav .coloredBorder {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   padding-inline: 3em;
 }
 .grid .container {
@@ -149,22 +168,22 @@ header nav .coloredBorder {
   width: fit-content;
 }
 .grid .container .wrapper {
-  width: 600px;
+  width: 700px;
   height: -moz-fit-content;
   height: fit-content;
   padding-inline: 2em;
 }
 .grid .container .wrapper .line {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .grid .container .wrapper .line .text {
   color: rgb(255, 252, 247);
   font-size: 3.75em;
-  font-family: "logo";
+  font-family: "cave";
   font-weight: 700;
-  letter-spacing: 5px;
-  line-height: 1em;
+  letter-spacing: 8px;
+  line-height: 1.1em;
 }
 .grid .container .wrapper .text-box {
   display: flex;
@@ -254,12 +273,116 @@ header nav .coloredBorder {
 .main section:nth-child(2) {
   height: 100vh;
   width: 100%;
-  background-color: #131313;
-  background-image: url(/img/bg-space.jpg);
+  background-color: #020202;
+}
+
+.grid1 {
+  display: grid;
+  height: 100vh;
+  gap: 1em;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  z-index: 1;
+}
+.grid1 .object:nth-child(1) {
+  margin: 1em;
+  grid-row-start: 3;
+  grid-row-end: 6;
+  grid-column-start: 2;
+  grid-column-end: 6;
+}
+.grid1 .object:nth-child(1) h1 {
+  text-transform: uppercase;
+  font-size: 11em;
+  letter-spacing: 0.3em;
+  font-family: "cave";
+  font-weight: 100;
+  color: white;
+  transition: all 0.5s ease-in-out;
+}
+.grid1 .object:nth-child(1) p {
+  inline-size: auto;
+  word-wrap: break-word;
+  font-size: 10px;
+  color: white;
+  text-align: start;
+  transition: all 0.5s ease-in-out;
+}
+.grid1 .big-text:hover {
+  cursor: pointer;
+}
+.grid1 .big-text:hover h1 {
+  scale: 1.1;
+}
+.grid1 .big-text:hover p {
+  transform: translateY(2em);
+}
+.grid1 .object:nth-child(2) {
+  width: 20em;
+  margin-top: 4em;
+  margin-bottom: -5em;
+  background-image: url(/img/ezgif.com-webp-to-jpg.jpg);
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
-  background-blend-mode: multiply;
-  background-color: rgb(24, 24, 24);
+  grid-row-start: 1;
+  grid-row-end: 5;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+.grid1 .object:nth-child(3) {
+  margin-block-end: 2em;
+  margin-block-start: -4em;
+  padding-right: 1em;
+  background-image: url(/img/2card.jpeg);
+  background-position: center;
+  background-size: cover;
+  grid-row-start: 5;
+  grid-row-end: 7;
+  grid-column-end: -2;
+}
+.grid1 .paragraph {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+.grid1 .paragraph p:nth-child(1) {
+  position: absolute;
+  top: 250px;
+  left: 75%;
+  inline-size: 300px;
+  word-wrap: break-word;
+  font-size: 10px;
+  color: white;
+  text-align: start;
+  transform: rotate(60deg);
+}
+.grid1 .paragraph p:nth-child(2) {
+  position: absolute;
+  top: 182px;
+  left: 550px;
+  inline-size: 400px;
+  word-wrap: break-word;
+  font-size: 10px;
+  color: white;
+  text-align: center;
+}
+
+.link-svg {
+  gap: 0.25em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em;
+}
+.link-svg .svg {
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-size: 25px 25px;
+  background: url(/svg/down-arrow-svgrepo-com.svg);
+}
+.link-svg p {
+  color: white;
+  text-align: center;
+  letter-spacing: 2px;
 }/*# sourceMappingURL=index.css.map */
