@@ -257,6 +257,42 @@ header {
           height: 250px;
           display: flex;
           flex-direction: column;
+
+          .button-cont {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-right: 3em;
+            .button {
+              display: inline-grid;
+              padding-inline: 0;
+              padding-block: 0.5em;
+              padding-inline: 2em;
+              margin-inline: 0.5em;
+              width: 50px;
+              border: none;
+              background-color: rgba(255, 255, 255, 0.089);
+              border-radius: 2em;
+              overflow: hidden;
+              transition: all 0.2s;
+              span {
+                text-align: center;
+                color: white;
+                font-family: "space";
+                font-size: 1em;
+              }
+            }
+            .button:hover {
+              background-color: #04806b;
+            }
+            .button:active {
+              background-color: #ffffff;
+              span {
+                color: black;
+                font-weight: 200;
+              }
+            }
+          }
           .wraper {
             margin-top: 1em;
             margin-bottom: 1em;
