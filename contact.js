@@ -5,8 +5,8 @@ let flagPoles = CSSRulePlugin.getRule(".section1");
 
 tl.from(".split1", {
   opacity: 0,
-  x: -600,
-  duration: 1.25,
+  x: -800,
+  duration: 2,
 }).to(".split1", {
   opacity: 1,
   x: 0,

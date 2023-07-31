@@ -8,6 +8,17 @@
 
 */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+:root {
+  --gradient: linear-gradient(
+    45deg,
+    rgb(116, 0, 148),
+    rgb(64, 0, 182),
+    rgb(0, 11, 172),
+    rgb(0, 156, 196),
+    rgb(0, 184, 153)
+  );
+}
+
 @font-face {
   font-family: "logo";
   src: url(/font/static/Tektur_SemiCondensed-Regular.ttf);
@@ -207,7 +218,7 @@ header nav .coloredBorder {
   letter-spacing: 0.125em;
 }
 .grid .container .wrapper .text-box h1 span {
-  color: #5ccccc;
+  color: #00ffc8;
   font-weight: 400;
 }
 .grid .container .wrapper .text-box h1::before,
@@ -261,14 +272,21 @@ header nav .coloredBorder {
 .main section:nth-child(1) {
   height: 100vh;
   width: 100%;
-  background-color: #131313;
-  background-image: url(/img/bg-space.jpg);
+  background-image: var(--gradient);
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   background-attachment: fixed;
+  background-size: 400%;
+  animation: bgA 20s infinite alternate;
+  background-color: #1f1f1f;
   background-blend-mode: multiply;
-  background-color: rgb(24, 24, 24);
+}
+@keyframes bgA {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
 }
 .main section:nth-child(2) {
   height: 100vh;
